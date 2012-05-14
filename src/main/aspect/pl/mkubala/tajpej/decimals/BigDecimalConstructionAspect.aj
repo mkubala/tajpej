@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 public aspect BigDecimalConstructionAspect {
 
-    declare warning : call(BigDecimal.new(double)) : "Prefer BigDecimal.valueOf(double) or BigDecimal(String) over BigDecimal(double).";
+    declare warning : call(BigDecimal.new(double)) : 
+        "Avoid passing double as constructor argument. Use new BigDecimal(String) or BigDecimal.valueOf(double) for non-constant values.";
     
 }
